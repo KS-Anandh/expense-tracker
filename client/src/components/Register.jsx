@@ -15,7 +15,7 @@ const Register = () => {
   const registerHandler = async () => {
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:9700/user/register", {
+      const res = await axios.post("https://ex-traker.vercel.app/user/register", {
         userName,
         userMail,
         userPassword,

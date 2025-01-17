@@ -29,7 +29,7 @@ const Table = ({setBalence,data,setData,tableRef}) => {
   const getData=async()=>{
     try{
       const token= localStorage.getItem('token')
-     const res=await axios.get("http://localhost:9700/data/",{headers:{Authorization :`Bearer ${token}`}})
+     const res=await axios.get("https://ex-traker.vercel.app/data/",{headers:{Authorization :`Bearer ${token}`}})
      if (JSON.stringify(res.data) !== JSON.stringify(data)) {
       setData(res.data);
     }
@@ -42,7 +42,7 @@ const Table = ({setBalence,data,setData,tableRef}) => {
   const deleteHandler=async(id)=>{
     try{
       const token=localStorage.getItem('item');
-      const res=await axios.delete(`http://localhost:9700/data/remove/${id}`)
+      const res=await axios.delete(`https://ex-traker.vercel.app/data/remove/${id}`)
       alert(res.data)
       const filteredData=data.filter((item)=>item._id!=id)
       setData(filteredData)

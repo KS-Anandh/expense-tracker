@@ -12,7 +12,7 @@ const Login = () => {
   const loginHandler = async() => {
     setLoading(true)
     try{
-      const res=await axios.post("http://localhost:9700/user/login",{userMail, userPassword});
+      const res=await axios.post("https://ex-traker.vercel.app/user/login",{userMail, userPassword});
       console.log(res.data)
       localStorage.setItem("token",res.data.token);
       navigate("/")
